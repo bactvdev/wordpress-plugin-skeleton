@@ -7,8 +7,8 @@ class AdminController
     public function register_menu()
     {
         add_menu_page(
-            'Healthcheck BMI',
-            'Healthcheck BMI',
+            'BMI Calculator',
+            'BMI Calculator',
             'manage_options',
             'healthcheck-bmi',
             [$this, 'render_admin_page'],
@@ -19,6 +19,14 @@ class AdminController
     public function render_admin_page()
     {
         include plugin_dir_path(__FILE__) . '../Views/admin-page.php';
+    }
+
+    public static function init_options()
+    {
+        return [
+          "lang" => "ja",
+          "show_popup_result" => false
+        ];
     }
 
     public function enqueue_scripts()

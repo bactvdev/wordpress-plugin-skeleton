@@ -81,9 +81,7 @@ class PublicController
 
     public function get_config()
     {
-        $config = [
-          "lang" => "en"
-        ];
+        $config = get_option("kayb_bmi_config");
         return rest_ensure_response($config);
     }
 

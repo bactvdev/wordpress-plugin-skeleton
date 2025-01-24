@@ -26,6 +26,9 @@ onMounted(async () => {
   const config = await getConfig()
 
   locale.value = config.lang ?? 'en'
+  if (config.show_result_type === 'popup') {
+    isPopupResult.value = true
+  }
 
   loadingPage.value = false
 })
