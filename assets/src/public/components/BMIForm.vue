@@ -5,17 +5,13 @@ import { calculateBMI } from '../helpers/util';
 
 const emit = defineEmits(['onResult'])
 
-const formInit = {
+const form = reactive({
   height: 180,
   heightUnit: 'cm',
   weight: 65,
   weightUnit: 'kg',
   gender: 'male',
   age: 25
-}
-
-const form = reactive({
-  ...formInit
 })
 
 const rules = {
@@ -31,12 +27,6 @@ const rules = {
 }
 
 const formRef = ref()
-
-const handleReset = () => {
-  for (const key in form) {
-    form[key] = formInit[key]
-  }
-}
 
 const loading = ref(false)
 
@@ -57,7 +47,7 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <ElForm ref="formRef" :model="form" label-width="100" label-position="left" :rules="rules"
+  <ElForm class="bmi-form" ref="formRef" :model="form" label-width="100" label-position="left" :rules="rules"
     require-asterisk-position="right">
     <ElFormItem :label="$t('form.field.height')" prop="height">
       <ElInput v-model="form.height" :placeholder="$t('form.placeholder.input_height')"
@@ -93,13 +83,16 @@ const handleSubmit = async () => {
       </ElRadioGroup>
     </ElFormItem>
     <ElFormItem>
-      <!-- <ElButton @click="handleReset">{{ $t('reset') }}</ElButton> -->
       <ElButton type="primary" :loading="loading" @click="handleSubmit">{{ $t('calculate') }}</ElButton>
     </ElFormItem>
   </ElForm>
 </template>
 
 <style>
+.bmi-form {
+  padding: 12px;
+}
+
 .el-select__placeholder {
   font-weight: 500;
   color: #000;

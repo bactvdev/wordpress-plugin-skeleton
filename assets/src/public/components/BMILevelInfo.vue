@@ -24,8 +24,8 @@ import { BMIAllLevels as items } from '../helpers/data';
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border-radius: 4px;
-  padding: 8px;
+  border-radius: 8px;
+  padding: 12px;
   background-color: #f9f9f9;
 }
 
@@ -34,7 +34,10 @@ import { BMIAllLevels as items } from '../helpers/data';
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.bmi-value {
+  font-weight: 500;
 }
 </style>

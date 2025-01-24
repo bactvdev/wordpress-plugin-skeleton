@@ -11,7 +11,8 @@ class PublicController
 
     public function render()
     {
-        return '<div id="healthcheck-bmi-public-app"></div>';
+        $lang = 'en';
+        return '<div><div id="healthcheck-bmi-public-app"></div> <input id="bmi-curr-lang" type="hidden" value="' . $lang . '" /> </div>';
     }
 
     public function enqueue_scripts()
@@ -76,5 +77,21 @@ class PublicController
             return '<script type="module" src="' . esc_url($src) . '"></script>';
         }
         return $tag;
+    }
+
+    public function get_config()
+    {
+        $config = [
+          "lang" => "en"
+        ];
+        return rest_ensure_response($config);
+    }
+
+    public function register_route()
+    {
+        register_rest_route('healthcheck-bmi/v1', '/config', [
+          'methods' => 'GET',
+          'callback' => [$this, 'get_config'],
+        ]);
     }
 }

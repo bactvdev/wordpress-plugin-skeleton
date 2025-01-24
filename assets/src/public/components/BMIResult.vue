@@ -52,8 +52,8 @@ const option = reactive({
       label: {
         show: true,
         position: 'outside',
+        fontSize: 13,
       },
-      percentPrecision: 1,
       data: BMILevels.value
     },
     {
@@ -95,7 +95,9 @@ const option = reactive({
     }
   ]
 });
-let myChart = ref()
+
+const myChart = ref()
+
 onMounted(() => {
   const chartDom = document.getElementById('bmi-chart');
   nextTick(() => {
@@ -107,10 +109,12 @@ onMounted(() => {
     }
   })
 
-  const opts = showResult(props.result);
-  setTimeout(() => {
-    myChart.value.setOption(opts)
-  }, 300)
+  if (props.result !== -1) {
+    const opts = showResult(props.result);
+    setTimeout(() => {
+      myChart.value.setOption(opts)
+    }, 300)
+  }
 })
 
 onBeforeUnmount(() => {
@@ -129,6 +133,7 @@ const showResult = (newValue) => {
 
   // cal arrow angle
   const group = BMILevelGroups.filter(it => it.ranges[0] <= newValue && it.ranges[1] > newValue)[0]
+  if (!group) return
   const angle = Math.round((newValue - group.ranges[0]) * ((group.angles[1] - group.angles[0]) / (group.ranges[1] - group.ranges[0])) + group.angles[0])
 
   const newOptions = {
@@ -166,7 +171,7 @@ watch(
 <style scoped>
 .result-box {
   display: grid;
-  grid-template-columns: 400px auto;
+  grid-template-columns: 60% auto;
   gap: 20px;
   width: 100%;
 }

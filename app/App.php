@@ -29,5 +29,6 @@ class App
         $publicController = new PublicController();
         add_shortcode('healthcheck_bmi', [$publicController, 'render']);
         add_action('wp_enqueue_scripts', [$publicController, 'enqueue_scripts']);
+        add_action('rest_api_init', [$publicController, 'register_route']);
     }
 }

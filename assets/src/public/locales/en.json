@@ -16,7 +16,7 @@
     }
   },
   "reset": "Reset",
-  "calculate": "Calcalute",
+  "calculate": "Result",
   "bmi_levels": {
     "severe_th": "Severe Thinness",
     "moderate_th": "Moderate Thinness",

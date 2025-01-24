@@ -10,10 +10,16 @@ const getMessagesLocale = async () => {
   return locales;
 };
 
-const i18n = createI18n({
-  locale: "en",
-  fallbackLocale: "en",
-  messages: await getMessagesLocale()
-});
+const setupI18n = async () => {
+  const messages = await getMessagesLocale();
 
-export default i18n;
+  const i18n = createI18n({
+    locale: "en",
+    fallbackLocale: "en",
+    messages,
+  });
+
+  return i18n;
+};
+
+export default setupI18n;
