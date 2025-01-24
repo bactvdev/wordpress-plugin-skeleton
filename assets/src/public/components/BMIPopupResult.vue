@@ -1,6 +1,7 @@
 <script setup>
 import { ElButton, ElDialog } from 'element-plus';
 import BMIResult from './BMIResult.vue';
+import { nextTick, onMounted, ref } from 'vue';
 
 const dialogVisible = defineModel()
 
@@ -14,7 +15,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <ElDialog v-model="dialogVisible" title="" modal-class="bmi-popup-result" append-to-body :show-close="false">
+  <ElDialog v-model="dialogVisible" title="" modal-class="bmi-popup-result" :show-close="false">
     <BMIResult :result="props.result" />
 
     <template #footer>
@@ -31,6 +32,12 @@ const props = defineProps({
 @media only screen and (max-width: 767px) {
   .bmi-popup-result .el-dialog {
     width: 98%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .bmi-popup-result .el-dialog {
+    width: 352.8px;
   }
 }
 </style>

@@ -1,0 +1,33 @@
+{
+  "title": "BMI计算器",
+  "form": {
+    "field": {
+      "height": "身高",
+      "weight": "体重",
+      "age": "年龄",
+      "gender": "性别",
+      "male": "男",
+      "female": "女"
+    },
+    "placeholder": {
+      "input_height": "输入您的身高",
+      "input_weight": "输入您的体重",
+      "input_age": "输入您的年龄"
+    }
+  },
+  "reset": "重置",
+  "calculate": "计算",
+  "bmi_levels": {
+    "severe_th": "严重消瘦",
+    "moderate_th": "中度消瘦",
+    "mild_th": "轻度消瘦",
+    "normal": "正常",
+    "overweight": "超重",
+    "obese_one": "肥胖 I 类",
+    "obese_two": "肥胖 II 类",
+    "obese_three": "肥胖 III 类",
+    "underweight": "体重过轻",
+    "obese": "肥胖"
+  },
+  "result_text": "您的BMI值: {value}"
+}

@@ -1,0 +1,33 @@
+{
+  "title": "BMI計算機",
+  "form": {
+    "field": {
+      "height": "身長",
+      "weight": "体重",
+      "age": "年齢",
+      "gender": "性別",
+      "male": "男性",
+      "female": "女性"
+    },
+    "placeholder": {
+      "input_height": "身長を入力してください",
+      "input_weight": "体重を入力してください",
+      "input_age": "年齢を入力してください"
+    }
+  },
+  "reset": "リセット",
+  "calculate": "計算",
+  "bmi_levels": {
+    "severe_th": "重度のやせ",
+    "moderate_th": "中度のやせ",
+    "mild_th": "軽度のやせ",
+    "normal": "正常",
+    "overweight": "過体重",
+    "obese_one": "肥満クラスI",
+    "obese_two": "肥満クラスII",
+    "obese_three": "肥満クラスIII",
+    "underweight": "低体重",
+    "obese": "肥満"
+  },
+  "result_text": "あなたのBMI: {value}"
+}

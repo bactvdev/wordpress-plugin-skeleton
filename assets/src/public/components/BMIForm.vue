@@ -20,13 +20,13 @@ const form = reactive({
 
 const rules = {
   height: [
-    { required: true, message: 'Please input your height', trigger: 'blur' },
+    { required: true, message: '', trigger: 'blur' },
   ],
   weight: [
-    { required: true, message: 'Please input your weight', trigger: 'blur' },
+    { required: true, message: '', trigger: 'blur' },
   ],
   age: [
-    { required: true, message: 'Please input your age', trigger: 'blur' },
+    { required: true, message: '', trigger: 'blur' },
   ]
 }
 
@@ -57,11 +57,11 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <ElForm ref="formRef" :model="form" label-width="80" label-position="left" :rules="rules"
+  <ElForm ref="formRef" :model="form" label-width="100" label-position="left" :rules="rules"
     require-asterisk-position="right">
-    <ElFormItem :label="'Height'" prop="height">
-      <ElInput v-model="form.height" placeholder="180" @input="(value) => form.height = value.replace(/[^0-9.]/g, '')"
-        clearable>
+    <ElFormItem :label="$t('form.field.height')" prop="height">
+      <ElInput v-model="form.height" :placeholder="$t('form.placeholder.input_height')"
+        @input="(value) => form.height = value.replace(/[^0-9.]/g, '')" clearable>
         <template #append>
           <ElSelect v-model="form.heightUnit" style="width: 75px">
             <ElOption label="cm" value="cm" />
@@ -70,9 +70,9 @@ const handleSubmit = async () => {
         </template>
       </ElInput>
     </ElFormItem>
-    <ElFormItem :label="'Weight'" prop="weight">
-      <ElInput v-model="form.weight" placeholder="65" @input="(value) => form.weight = value.replace(/[^0-9.]/g, '')"
-        clearable>
+    <ElFormItem :label="$t('form.field.weight')" prop="weight">
+      <ElInput v-model="form.weight" :placeholder="$t('form.placeholder.input_weight')"
+        @input="(value) => form.weight = value.replace(/[^0-9.]/g, '')" clearable>
         <template #append>
           <ElSelect v-model="form.weightUnit" style="width: 75px">
             <ElOption label="kg" value="kg" />
@@ -82,19 +82,19 @@ const handleSubmit = async () => {
 
       </ElInput>
     </ElFormItem>
-    <ElFormItem :label="'Age'" prop="age">
-      <ElInput v-model="form.age" placeholder="25" @input="(value) => form.age = value.replace(/[^0-9.]/g, '')"
-        clearable />
+    <ElFormItem :label="$t('form.field.age')" prop="age">
+      <ElInput v-model="form.age" :placeholder="$t('form.placeholder.input_age')"
+        @input="(value) => form.age = value.replace(/[^0-9.]/g, '')" clearable />
     </ElFormItem>
-    <ElFormItem :label="'Gender'" prop="gender">
+    <ElFormItem :label="$t('form.field.gender')" prop="gender">
       <ElRadioGroup v-model="form.gender">
-        <ElRadio value="male">Male</ElRadio>
-        <ElRadio value="female">Female</ElRadio>
+        <ElRadio value="male">{{ $t('form.field.male') }}</ElRadio>
+        <ElRadio value="female">{{ $t('form.field.female') }}</ElRadio>
       </ElRadioGroup>
     </ElFormItem>
     <ElFormItem>
-      <ElButton @click="handleReset">Reset</ElButton>
-      <ElButton type="primary" :loading="loading" @click="handleSubmit">Calculate</ElButton>
+      <!-- <ElButton @click="handleReset">{{ $t('reset') }}</ElButton> -->
+      <ElButton type="primary" :loading="loading" @click="handleSubmit">{{ $t('calculate') }}</ElButton>
     </ElFormItem>
   </ElForm>
 </template>

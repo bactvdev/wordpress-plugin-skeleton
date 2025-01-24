@@ -12,7 +12,7 @@ import { BMIAllLevels as items } from '../helpers/data';
         <ElIcon size="24">
           <DotIcon :style="'color: ' + item.color" />
         </ElIcon>
-        <span class="bmi-label">{{ item.label }}</span>
+        <span class="bmi-label">{{ $t('bmi_levels.' + item.key) }}</span>
       </div>
       <span class="bmi-value">{{ item.value }}</span>
     </div>

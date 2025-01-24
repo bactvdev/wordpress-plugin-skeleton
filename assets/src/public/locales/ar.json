@@ -1,0 +1,33 @@
+{
+  "title": "حاسبة مؤشر كتلة الجسم",
+  "form": {
+    "field": {
+      "height": "الطول",
+      "weight": "الوزن",
+      "age": "العمر",
+      "gender": "الجنس",
+      "male": "ذكر",
+      "female": "أنثى"
+    },
+    "placeholder": {
+      "input_height": "أدخل طولك",
+      "input_weight": "أدخل وزنك",
+      "input_age": "أدخل عمرك"
+    }
+  },
+  "reset": "إعادة تعيين",
+  "calculate": "احسب",
+  "bmi_levels": {
+    "severe_th": "نحافة شديدة",
+    "moderate_th": "نحافة متوسطة",
+    "mild_th": "نحافة خفيفة",
+    "normal": "طبيعي",
+    "overweight": "زيادة الوزن",
+    "obese_one": "السمنة الفئة الأولى",
+    "obese_two": "السمنة الفئة الثانية",
+    "obese_three": "السمنة الفئة الثالثة",
+    "underweight": "نقص الوزن",
+    "obese": "السمنة"
+  },
+  "result_text": "مؤشر كتلة الجسم الخاص بك: {value}"
+}

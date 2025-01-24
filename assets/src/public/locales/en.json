@@ -1,0 +1,33 @@
+{
+  "title": "BMI Calculator",
+  "form": {
+    "field": {
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "gender": "Gender",
+      "male": "Male",
+      "female": "Female"
+    },
+    "placeholder": {
+      "input_height": "Input your height",
+      "input_weight": "Input your weight",
+      "input_age": "Input your age"
+    }
+  },
+  "reset": "Reset",
+  "calculate": "Calcalute",
+  "bmi_levels": {
+    "severe_th": "Severe Thinness",
+    "moderate_th": "Moderate Thinness",
+    "mild_th": "Mild Thinness",
+    "normal": "Normal",
+    "overweight": "Overweight",
+    "obese_one": "Obese Class I",
+    "obese_two": "Obese Class II",
+    "obese_three": "Obese Class III",
+    "underweight": "Underweight",
+    "obese": "Obese"
+  },
+  "result_text": "Your BMI: {value}"
+}

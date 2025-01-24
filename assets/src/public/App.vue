@@ -8,7 +8,7 @@ const btnLoading = ref(false)
 const result = ref(-1)
 
 const isShowPopupResult = ref(false)
-const isPopupResult = ref(true)
+const isPopupResult = ref(false)
 
 const getResult = (rs) => {
   result.value = rs
@@ -21,7 +21,7 @@ const getResult = (rs) => {
 
 <template>
   <div class="healthcheck-bmi-box">
-    <h1 class="bmi-title">BMI Calculator</h1>
+    <h1 class="bmi-title">{{ $t('title') }}</h1>
     <div class="healthcheck-bmi-form">
       <BMIForm :loading="btnLoading" @on-result="getResult" />
     </div>

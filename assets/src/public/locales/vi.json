@@ -1,0 +1,33 @@
+{
+  "title": "Tính chỉ số BMI",
+  "form": {
+    "field": {
+      "height": "Chiều cao",
+      "weight": "Cân nặng",
+      "age": "Tuổi",
+      "gender": "Giới tính",
+      "male": "Nam",
+      "female": "Nữ"
+    },
+    "placeholder": {
+      "input_height": "Nhập chiều cao của bạn",
+      "input_weight": "Nhập cân nặng của bạn",
+      "input_age": "Nhập tuổi của bạn"
+    }
+  },
+  "reset": "Thiết lập lại",
+  "calculate": "Xem kết quả",
+  "bmi_levels": {
+    "severe_th": "Gầy độ nặng",
+    "moderate_th": "Gầy độ vừa",
+    "mild_th": "Gầy độ nhẹ",
+    "normal": "Bình thường",
+    "overweight": "Thừa cân",
+    "obese_one": "Béo phì cấp độ I",
+    "obese_two": "Béo phì cấp độ II",
+    "obese_three": "Béo phì cấp độ III",
+    "underweight": "Thiếu cân",
+    "obese": "Béo phì"
+  },
+  "result_text": "Chỉ số BMI của bạn: {value}"
+}
