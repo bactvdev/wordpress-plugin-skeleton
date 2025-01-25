@@ -2,6 +2,8 @@
 
 namespace KayB\BMICalculator\Controllers;
 
+use WP_REST_Request;
+
 class AdminController
 {
     public function register_menu()
@@ -24,8 +26,8 @@ class AdminController
     public static function init_options()
     {
         return [
-          "lang" => "ja",
-          "show_popup_result" => false
+          "lang" => "en",
+          "show_result_type" => "normal"
         ];
     }
 
@@ -91,5 +93,36 @@ class AdminController
             return '<script type="module" src="' . esc_url($src) . '"></script>';
         }
         return $tag;
+    }
+
+    public function get_config()
+    {
+        $config = get_option("kayb_bmi_config");
+        return rest_ensure_response($config);
+    }
+
+    public function update_config(WP_REST_Request $request)
+    {
+        $data = $request->get_json_params();
+        $lang = sanitize_text_field($data['lang'] ?? 'en');
+        $showResultType = sanitize_text_field($data['show_result_type'] ?? 'normal');
+
+        update_option('kayb_bmi_config', [
+            "lang" => $lang,
+            "show_result_type" => $showResultType,
+        ]);
+    }
+
+    public function register_route()
+    {
+        register_rest_route('healthcheck-bmi/admin/v1', '/config', [
+          'methods' => 'GET',
+          'callback' => [$this, 'get_config'],
+        ]);
+
+        register_rest_route('healthcheck-bmi/admin/v1', '/config', [
+          'methods' => 'POST',
+          'callback' => [$this, 'update_config'],
+        ]);
     }
 }

@@ -19,9 +19,6 @@
   "dependencies": {
     "echarts": "^5.6.0",
     "element-plus": "^2.9.3",
-    "highcharts": "^12.1.2",
-    "highcharts-vue": "^2.0.1",
-    "vue-i18n": "^10.0.5",
-    "vue-router": "^4.5.0"
+    "vue-i18n": "^10.0.5"
   }
 }

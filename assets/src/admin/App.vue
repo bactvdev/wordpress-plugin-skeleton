@@ -1,24 +1,25 @@
+<script setup>
+import Home from './views/Home.vue';
+
+</script>
+
 <template>
-  <div>
-    <nav>
-      <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/about">About</router-link></li>
-      </ul>
-    </nav>
-    <router-view></router-view>
+  <div class="main-content">
+    <Home />
   </div>
 </template>
 
-<style scoped>
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  gap: 10px;
-}
+<style>
+@import 'element-plus/dist/index.css'
+</style>
 
-nav ul li {
-  display: inline;
+<style scoped>
+.main-content {
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  margin-right: 20px;
+  margin-top: 20px;
+  padding: 20px;
 }
 </style>

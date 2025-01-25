@@ -33,8 +33,8 @@ import { BMIAllLevels as items } from '../helpers/data';
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  font-size: 0.9rem;
+  gap: 20px;
+  font-size: 0.85rem;
 }
 
 .bmi-value {

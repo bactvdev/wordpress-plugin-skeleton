@@ -41,6 +41,7 @@ class App
     {
         add_action('admin_menu', [$this->adminController, 'register_menu']);
         add_action('admin_enqueue_scripts', [$this->adminController, 'enqueue_scripts']);
+        add_action('rest_api_init', [$this->adminController, 'register_route']);
     }
 
     private function _define_public_hooks()
