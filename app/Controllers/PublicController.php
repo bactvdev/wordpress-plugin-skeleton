@@ -1,18 +1,16 @@
 <?php
 
-namespace KayB\BMICalculator\Controllers;
+namespace Clyper\WordpressVuePlugin\Controllers;
 
 class PublicController
 {
     public function init()
     {
-        add_shortcode('healthcheck_bmi', [$this, 'render']);
     }
 
     public function render()
     {
-        $lang = 'en';
-        return '<div><div id="healthcheck-bmi-public-app"></div> <input id="bmi-curr-lang" type="hidden" value="' . $lang . '" /> </div>';
+        return '<div id="wordpress-plugin-frontend-app"></div>';
     }
 
     public function enqueue_scripts()
@@ -26,7 +24,7 @@ class PublicController
                 true
             );
             wp_enqueue_script(
-                'bmi-calculator-public',
+                'wordpress-plugin-frontend-app',
                 'http://localhost:3000/assets/src/public/main.js',
                 [],
                 null,
@@ -48,7 +46,7 @@ class PublicController
         // Enqueue the JS file
         if (!empty($entry['file'])) {
             wp_enqueue_script(
-                'bmi-calculator-public',
+                'wordpress-plugin-frontend-app',
                 plugin_dir_url(__FILE__) . '../../dist/' . $entry['file'],
                 [],
                 null,
@@ -60,7 +58,7 @@ class PublicController
         if (!empty($entry['css'])) {
             foreach ($entry['css'] as $css_file) {
                 wp_enqueue_style(
-                    'bmi-calculator-public-style',
+                    'wordpress-plugin-frontend-style',
                     plugin_dir_url(__FILE__) . '../../dist/' . $css_file,
                     [],
                     null
@@ -73,23 +71,17 @@ class PublicController
 
     public function add_module_type($tag, $handle, $src)
     {
-        if (in_array($handle, ['vite-client', 'bmi-calculator-public'])) {
+        if (in_array($handle, ['vite-client', 'wordpress-plugin-frontend-app'])) {
             return '<script type="module" src="' . esc_url($src) . '"></script>';
         }
         return $tag;
     }
 
-    public function get_config()
-    {
-        $config = get_option("kayb_bmi_config");
-        return rest_ensure_response($config);
-    }
-
     public function register_route()
     {
-        register_rest_route('healthcheck-bmi/v1', '/config', [
-          'methods' => 'GET',
-          'callback' => [$this, 'get_config'],
-        ]);
+        /*register_rest_route('healthcheck-bmi/v1', '/config', [*/
+        /*  'methods' => 'GET',*/
+        /*  'callback' => [$this, 'get_config'],*/
+        /*]);*/
     }
 }

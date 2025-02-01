@@ -1,9 +1,9 @@
 <?php
 
-namespace KayB\BMICalculator;
+namespace Clyper\WordpressVuePlugin;
 
-use KayB\BMICalculator\Controllers\AdminController;
-use KayB\BMICalculator\Controllers\PublicController;
+use Clyper\WordpressVuePlugin\Controllers\AdminController;
+use Clyper\WordpressVuePlugin\Controllers\PublicController;
 
 class App
 {
@@ -21,12 +21,12 @@ class App
 
     public static function activate()
     {
-        add_option('kayb_bmi_config', AdminController::init_options());
+        add_option('wordpress_option_name', AdminController::init_options());
     }
 
     public static function deactivate()
     {
-        delete_option('kayb_bmi_config');
+        delete_option('wordpress_option_name');
     }
 
     public static function uninstall()
@@ -46,7 +46,6 @@ class App
 
     private function _define_public_hooks()
     {
-        add_shortcode('healthcheck_bmi', [$this->publicController, 'render']);
         add_action('wp_enqueue_scripts', [$this->publicController, 'enqueue_scripts']);
         add_action('rest_api_init', [$this->publicController, 'register_route']);
     }

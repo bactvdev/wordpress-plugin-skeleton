@@ -8,5 +8,5 @@ import setupI18n from "./plugins/i18n";
   const i18n = await setupI18n()
 
   app.use(i18n);
-  app.mount('#healthcheck-bmi-public-app');
+  app.mount('#wordpress-plugin-frontend-app');
 })()

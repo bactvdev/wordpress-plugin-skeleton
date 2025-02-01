@@ -1,6 +1,6 @@
-import { createI18n } from "vue-i18n";
+import {createI18n} from "vue-i18n";
 
-const messages = ['ar', 'de', 'en', 'es', 'fr', 'ja', 'pt', 'ru', 'vi', 'zh'];
+const messages = ['en', 'vi'];
 
 const getMessagesLocale = async () => {
   const locales = {};
@@ -13,13 +13,11 @@ const getMessagesLocale = async () => {
 const setupI18n = async () => {
   const messages = await getMessagesLocale();
 
-  const i18n = createI18n({
+  return createI18n({
     locale: "en",
     fallbackLocale: "en",
     messages,
   });
-
-  return i18n;
 };
 
 export default setupI18n;

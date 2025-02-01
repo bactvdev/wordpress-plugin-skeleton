@@ -4,4 +4,4 @@ import ElementPlus from 'element-plus'
 
 const app = createApp(App);
 app.use(ElementPlus);
-app.mount('#healthcheck-bmi-admin-app');
+app.mount('#wordpress-plugin-admin-app');

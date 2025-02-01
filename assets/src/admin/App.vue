@@ -10,16 +10,8 @@ import Home from './views/Home.vue';
 </template>
 
 <style>
-@import 'element-plus/dist/index.css'
+@import 'element-plus/dist/index.css';
 </style>
 
 <style scoped>
-.main-content {
-  background-color: #fff;
-  border: 1px solid #d9d9d9;
-  border-radius: 8px;
-  margin-right: 20px;
-  margin-top: 20px;
-  padding: 20px;
-}
 </style>

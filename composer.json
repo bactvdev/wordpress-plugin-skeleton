@@ -1,10 +1,10 @@
 {
-  "name": "bactv/healthcheck-bmi",
-  "description": "A Wordpress plugin to calculatr BMI",
+  "name": "bactv/wordpress-plugin",
+  "description": "A Wordpress plugin",
   "type": "wordpress-plugin",
   "autoload": {
     "psr-4": {
-      "KayB\\BMICalculator\\": "app/"
+      "Clyper\\WordpressVuePlugin\\": "app/"
     }
   }
 }
