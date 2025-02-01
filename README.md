@@ -1,0 +1,3 @@
+- Rename `autoload namespace` in composer.json
+- Change namespace classes in app/
+- Change app-id to mount VueJs
